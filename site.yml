@@ -1,0 +1,13 @@
+---
+# Create resources
+
+- import_playbook: create-flavor.yaml
+- import_playbook: create-image.yaml
+- import_playbook: create-key.yaml
+
+# Deploy infra
+
+- import_playbook: create-network.yaml
+- import_playbook: create-sg.yaml
+- import_playbook: create-instances.yaml
+...

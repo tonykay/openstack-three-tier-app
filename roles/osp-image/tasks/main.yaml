@@ -4,10 +4,11 @@
      dest: /tmp/rhel.qcow2
   tags:
       - tested
+
 - name: Create openstack image
   os_image:
-     cloud: openstack
-     name: rhel-guest
+     cloud: "{{ openstack_cloud | default ('openstack') }}"
+     name: rhel-guest-7.6
      container_format: bare
      disk_format: qcow2
      state: present
